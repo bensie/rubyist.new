@@ -6,6 +6,11 @@
 
 ### James Miller ###
 
+!SLIDE
+
+## github.com/bensie ##
+## twitter.com/bensie ##
+
 !SLIDE smbullets incremental
 
 # Ruby Origins #
@@ -36,9 +41,9 @@
 * Arrays
 * Hashes
 * Ranges
+* Control Structures
 * Objects
 * Methods
-* Control Structures
 
 !SLIDE smbullets
 
@@ -300,7 +305,37 @@
 # Enumerable!!! #
 ### http://ruby-doc.org/core/classes/Enumerable.html ###
 
-!SLIDE subsection
+!SLIDE
+
+# Control Structures #
+
+	@@@ ruby
+	today = Time.now
+
+	if today.saturday?
+	  puts "Do chores"
+	elsif today.sunday?
+	  puts "Relax"
+	else
+	  puts "Go to work"
+	end
+
+	puts "Do chores" if today.saturday?
+
+!SLIDE
+
+# Control Structures #
+
+	@@@ ruby
+	square = 4
+	while square < 1000
+	  square = square * square
+	  puts square
+	end
+
+	square = square while square < 1000
+
+!SLIDE
 
 # Objects #
 
