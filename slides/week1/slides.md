@@ -312,6 +312,10 @@
 
 	(low..high).include?(55) # => false
 
+	("a".."z").include?(5)   # => false
+	("a".."z").include?("d") # => true
+	("A".."Z").include?("d") # => false
+
 !SLIDE
 
 # Enumerable!!! #
@@ -345,33 +349,20 @@
 	  puts square
 	end
 
-	square = square while square < 1000
-
 !SLIDE
 
-# Objects #
-
-!SLIDE bullets incremental
-
-# Objects #
-
-* State
-* Behavior
-
-!SLIDE bullets incremental
-
-# Objects #
+# Control Structures #
 
 	@@@ ruby
-	Animal.new(species: "Duck")
+	temperature = 72
 
-!SLIDE
-
-# Instance Variables #
-
-	@@@ ruby
-	@species = "Duck"
-
-!SLIDE
-
-# Classes #
+	case temperature
+	when 0..32
+	  puts "Freezing!"
+	when 33..65
+	  puts "Not bad"
+	when 66..85
+	  puts "Sounds like sunny San Diego!"
+	when 86..100
+	  puts "Way too hot!"
+	end
