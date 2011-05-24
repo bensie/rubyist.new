@@ -44,6 +44,7 @@
 * Ranges
 * Conditionals
 * Control Structures
+* Nil and Nothingness
 
 !SLIDE smbullets
 
@@ -390,6 +391,24 @@
 	when 86..100
 	  puts "Way too hot!"
 	end
+
+!SLIDE
+
+# Nil and Nothingness #
+
+	@@@ ruby
+	nil == 0  # => false
+	3 - 3     # => 0 (not nil)
+
+	x = ""
+	x.nil?    # => false
+	x.empty?  # => true
+
+	y = [1,2]
+	y[2]      # => nil
+
+	y.nil?
+	# => undefined local variable or method `y'
 
 !SLIDE
 
