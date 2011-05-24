@@ -20,6 +20,7 @@
 * Object Oriented - everything is an object
 * Easy to read
 * Naming is intuitive (easy to write)
+* Rails in 2005
 
 !SLIDE smbullets
 
@@ -299,6 +300,17 @@
 	(1..10).each do |n|
 	  puts n if n.odd?
 	end
+
+!SLIDE
+
+# Ranges #
+### http://ruby-doc.org/core/classes/Range.html ###
+
+	@@@ ruby
+	low  = 10
+	high = 40
+
+	(low..high).include?(55) # => false
 
 !SLIDE
 
