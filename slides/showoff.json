@@ -1,0 +1,7 @@
+{
+  "name": "Rubyist.new",
+  "description": "Getting started with the Ruby programming language",
+  "sections": [
+		{"section":"week1"}
+  ]
+}

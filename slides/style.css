@@ -1,0 +1,8 @@
+.smbullets ul, .bullets ul {
+  list-style-type: circle;
+}
+
+.smbullets ul li, .bullets ul li {
+  text-align: left;
+  margin: 0 10%;
+}
