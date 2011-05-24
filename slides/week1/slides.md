@@ -42,9 +42,8 @@
 * Arrays
 * Hashes
 * Ranges
+* Conditionals
 * Control Structures
-* Objects
-* Methods
 
 !SLIDE smbullets
 
@@ -321,6 +320,31 @@
 # Enumerable!!! #
 ### http://ruby-doc.org/core/classes/Enumerable.html ###
 
+!SLIDE smbullets incremental
+
+# Conditionals #
+
+* Conditional statements evaluate to true or false
+* Common operators: == (equal), > (greater than), >= (greater than or equal to), < (less than), and <= (less than or equal to)
+
+!SLIDE
+
+# Conditionals #
+
+	@@@ ruby
+	1 == 2   # => false
+	1 == "1" # => false
+	3 > 1    # => true
+	1 >= 1   # => true
+
+	name = "bensie"
+	age  = 27
+
+	if name == "bensie" and age > 21
+	  puts "#{name} may consume alcohol"
+	end
+
+
 !SLIDE
 
 # Control Structures #
@@ -366,3 +390,7 @@
 	when 86..100
 	  puts "Way too hot!"
 	end
+
+!SLIDE
+
+# Questions? #
