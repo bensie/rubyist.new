@@ -35,6 +35,7 @@
 * Numbers
 * Arrays
 * Hashes
+* Ranges
 * Objects
 * Methods
 * Control Structures
@@ -236,23 +237,42 @@
 ### http://ruby-doc.org/core/classes/Hash.html ###
 
 	@@@ ruby
-	hash = Hash.new
-	# => {}
+	hash = Hash.new # => {}
 
 	pig = {weight: 1000, legs: 4}
 
-	pig[:weight]
-	# => 1000
+	pig[:weight]    # => 1000
+	pig[:legs]      # => 4
 
-	pig[:legs]
-	# => 4
+	pig.keys        # => [:weight, :legs]
+	pig.values      # => [1000, 4]
+
+!SLIDE
+
+# Hashes #
+### http://ruby-doc.org/core/classes/Hash.html ###
+### http://ruby-doc.org/core/classes/Enumerable.html ###
+
+	@@@ ruby
+	produce = {
+	  apples: 3, oranges: 1, carrots: 12
+	}
+
+	produce.each do |key, value|
+	  puts "We have #{value} #{key}."
+	end
+
+!SLIDE
+
+# Enumerable!!! #
+### http://ruby-doc.org/core/classes/Enumerable.html ###
 
 !SLIDE
 
 # Hashes in 1.9 vs 1.8
 
 	@@@ ruby
-	h = {weight: 1000, legs: 4} # => 1.9
+	h = {weight: 1000, legs: 4}       # => 1.9
 
 	h = {:weight => 1000, :legs => 4} # => 1.8
 
@@ -260,6 +280,7 @@
 !SLIDE
 
 # Ranges #
+### http://ruby-doc.org/core/classes/Range.html ###
 
 	@@@ ruby
 	(1..10).to_a
@@ -267,6 +288,17 @@
 
 	(1...10).to_a
 	# => [2, 3, 4, 5, 6, 7, 8, 9]
+
+	(1..10).include?(5) # => true
+
+	(1..10).each do |n|
+	  puts n if n.odd?
+	end
+
+!SLIDE
+
+# Enumerable!!! #
+### http://ruby-doc.org/core/classes/Enumerable.html ###
 
 !SLIDE subsection
 
