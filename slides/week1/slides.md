@@ -407,8 +407,8 @@
 	y = [1,2]
 	y[2]      # => nil
 
-	y.nil?
-	# => undefined local variable or method `y'
+	z.nil?
+	# => undefined local variable or method `z'
 
 !SLIDE
 
