@@ -18,6 +18,7 @@ gem install showoff
 
 Run the Showoff web server:
 
+```
 cd /path/to/repo/rubyist.new/slides
 showoff serve
 ```
