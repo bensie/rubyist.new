@@ -170,8 +170,10 @@
 
 	@@@ ruby
 	attr_accessor :team
-	attr_writer :team
+
 	attr_reader :team
+
+	attr_writer :team
 
 !SLIDE smbullets
 
