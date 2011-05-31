@@ -61,6 +61,23 @@
 
 # Objects #
 
+	@@@ ruby
+	String.ancestors
+	# [String, Comparable, Object,
+	# Kernel, BasicObject]
+
+	Hash.ancestors
+	# [Hash, Enumerable, Object,
+	# Kernel, BasicObject]
+
+	Fixnum.ancestors
+	# [Fixnum, Integer, Numeric, Comparable,
+	# Object, Kernel, BasicObject]
+
+!SLIDE
+
+# Objects #
+
 ## State + Behavior ##
 
 !SLIDE
@@ -82,6 +99,29 @@
 
 !SLIDE smbullets
 
+# Objects #
+## State ##
+
+* Name
+* Height
+* Weight
+* Team
+* HR / RBI / Avg / Errors
+* Goals / Assists / Penalties
+
+!SLIDE smbullets
+
+# Objects #
+## Behavior ##
+
+* Throw
+* Catch
+* Swing
+* Dribble
+* Shoot
+
+!SLIDE smbullets
+
 # Instance Variables #
 
 * Name beginning with @
@@ -92,7 +132,7 @@
 
 !SLIDE
 
-# Objects #
+# Accessor Methods #
 
 	@@@ ruby
 	class Player
@@ -107,13 +147,58 @@
 
 !SLIDE
 
-# Objects #
+# Accessor Methods #
+
+	@@@ ruby
+	class Player
+	  attr_accessor :team
+	end
+
+!SLIDE
+
+# Accessor Methods #
 
 	@@@ ruby
 	b = BaseballPlayer.new
 	b.team = "Yankees"
 	b.inspect
 	# => #<BaseballPlayer:0x0xx @team="Yankees">
+
+!SLIDE
+
+# Accessor Methods #
+
+	@@@ ruby
+	attr_accessor :team
+	attr_writer :team
+	attr_reader :team
+
+!SLIDE smbullets
+
+# Initialize #
+### initialize() ###
+
+* Special constructor method gets called for all new objects
+* Set initial attributes for all new instances of that class
+* Require arguments to create a new object
+
+!SLIDE
+
+# Initialize #
+
+	@@@ ruby
+	class BaseballPlayer < Player
+
+	  attr_accessor :batting_average, :home_runs
+	  attr_reader :name
+
+	  def initialize(name)
+	    @name            = name
+	    @batting_average = 0
+	    @home_runs       = 0
+	  end
+
+	end
 
 !SLIDE
 
