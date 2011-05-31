@@ -11,6 +11,10 @@
 ## github.com/bensie ##
 ## twitter.com/bensie ##
 
+!SLIDE
+
+# Week 1 #
+
 !SLIDE smbullets incremental
 
 # Ruby Origins #
@@ -66,14 +70,14 @@
 
 !SLIDE smbullets incremental
 
-# Variables
+# Variables #
 
 * Not objects :)
 * References to an object
 
 !SLIDE
 
-# Variables
+# Variables #
 
 	@@@ ruby
 	a = 1
@@ -87,7 +91,7 @@
 
 !SLIDE
 
-# Variables
+# Variables #
 
 	@@@ ruby
 	a = 1
