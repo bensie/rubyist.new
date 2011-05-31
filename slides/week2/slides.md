@@ -257,7 +257,7 @@
 # Method Visibility #
 
 	@@@ ruby
-	class HockeyPlayer
+	class HockeyPlayer < Player
 	  attr_accessor :shot_percentage
 
 	  def shoot
@@ -267,7 +267,7 @@
 	  private
 
 	  def high_shot_percentage?
-	    shot_percentage > 50
+	    (shot_percentage || 0) > 50
 	  end
 	end
 
