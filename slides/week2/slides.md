@@ -202,6 +202,40 @@
 
 !SLIDE
 
+# Methods #
+
+	@@@ ruby
+	class HockeyPlayer < Player
+	  attr_accessor :shot_percentage
+
+	  def initialize
+	    @shot_percentage = 0
+	  end
+
+	  def shoot
+	    if shot_percentage > 50
+	      puts "SCORE!"
+	    else
+	      puts "MISS!"
+	    end
+	  end
+	end
+
+!SLIDE
+
+# Methods #
+
+	@@@ ruby
+	h = HockeyPlayer.new
+	h.shoot
+	# => "MISS!"
+
+	h.shot_percentage = 75
+	h.shoot
+	# => "SCORE!"
+
+!SLIDE
+
 # Ruby Standard Library #
 ### http://ruby-doc.org/stdlib/ ###
 
