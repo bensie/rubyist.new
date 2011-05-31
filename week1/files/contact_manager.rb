@@ -49,4 +49,8 @@ class CompanyTest < Test::Unit::TestCase
     assert_equal "SDRuby", @company.name
   end
 
+  def test_company_does_not_respond_to_title
+    assert !@company.respond_to?(:title)
+  end
+
 end
