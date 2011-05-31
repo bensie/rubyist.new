@@ -238,6 +238,54 @@
 
 !SLIDE
 
+# Method Visibility #
+
+## public ##
+## protected ##
+## private ##
+
+!SLIDE smbullets incremental
+
+# Method Visibility #
+
+* public: methods can be called by anyone - no access control. Methods are public by default (except for initialize)
+* protected: methods can only be invoked by objects of the defining class and its subclasses
+* private: methods cannot be called with an explicit receiver - receiver is always the current object (self)
+
+!SLIDE
+
+# Method Visibility #
+
+	@@@ ruby
+	class HockeyPlayer
+	  attr_accessor :shot_percentage
+
+	  def shoot
+	    puts "SCORE!" if high_shot_percentage?
+	  end
+
+	  private
+
+	  def high_shot_percentage?
+	    shot_percentage > 50
+	  end
+	end
+
+!SLIDE
+
+# Method Visibility #
+
+	@@@ ruby
+	h = HockeyPlayer.new
+	h.shot_percentage = 75
+	h.shoot
+	# => "SCORE!"
+
+	h.high_shot_percentage?
+	# NoMethodError: private method `high_...
+
+!SLIDE
+
 # Ruby Standard Library #
 ### http://ruby-doc.org/stdlib/ ###
 
