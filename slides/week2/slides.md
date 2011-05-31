@@ -12,23 +12,6 @@
 
 !SLIDE
 
-# Ruby Standard Library #
-### http://ruby-doc.org/stdlib/ ###
-
-	@@@ ruby
-	require 'digest/sha2'
-	Digest::SHA2.hexdigest("password")
-	# => "5e884898da280..."
-
-	require 'csv'
-	CSV.generate(...)
-
-	require 'net/http'
-	Net::HTTP.new("api.github.com", 80)
-
-
-!SLIDE
-
 # Methods #
 
 	@@@ ruby
@@ -131,3 +114,19 @@
 	b.team = "Yankees"
 	b.inspect
 	# => #<BaseballPlayer:0x0xx @team="Yankees">
+
+!SLIDE
+
+# Ruby Standard Library #
+### http://ruby-doc.org/stdlib/ ###
+
+	@@@ ruby
+	require 'digest/sha2'
+	Digest::SHA2.hexdigest("password")
+	# => "5e884898da280..."
+
+	require 'csv'
+	CSV.generate(...)
+
+	require 'net/http'
+	Net::HTTP.new("api.github.com", 80)
