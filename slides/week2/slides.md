@@ -10,6 +10,18 @@
 
 # Week 2 #
 
+!SLIDE smbullets
+
+# Today #
+
+* Methods
+* Objects
+* Classes
+* Instance Variables
+* Accessors
+* Initialize
+* Method Visibility
+
 !SLIDE
 
 # Methods #
