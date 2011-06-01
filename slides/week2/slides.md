@@ -55,7 +55,7 @@
 
 # Objects #
 
-## An instance of a larger classification ##
+## Instances of a larger classification ##
 
 !SLIDE
 
@@ -76,9 +76,24 @@
 
 !SLIDE
 
+# Class Declaration #
+
+	@@@ ruby
+	class Player
+	end
+
+	Player.class
+	# => Class
+
+	Class.ancestors
+	# [Class, Module, Object,
+	# Kernel, BasicObject]
+
+!SLIDE
+
 # Objects #
 
-## State + Behavior ##
+## State + Behavior = Object ##
 
 !SLIDE
 
