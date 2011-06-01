@@ -301,11 +301,6 @@
 
 !SLIDE
 
-# test/unit #
-### http://ruby-doc.org/stdlib/libdoc/test/unit/rdoc/index.html ###
-
-!SLIDE
-
 # Ruby Standard Library #
 ### http://ruby-doc.org/stdlib/ ###
 
@@ -319,3 +314,8 @@
 
 	require 'net/http'
 	Net::HTTP.new("api.github.com", 80)
+
+!SLIDE
+
+# test/unit #
+### http://ruby-doc.org/stdlib/libdoc/test/unit/rdoc/index.html ###
