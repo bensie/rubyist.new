@@ -2,7 +2,11 @@
 
 Slides and code from SDRuby intro to Ruby class
 
-## Running the slides
+## View the latest slides online
+
+http://bensie.github.com/rubyist.new
+
+## Running the slides on your local machine
 
 Clone the git repository:
 
