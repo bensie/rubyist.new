@@ -190,3 +190,77 @@
 	Triangle::SIDES # => 3
 	Polygon::SIDES  # => 10
 	SIDES # => NameError: uninitialized constant
+
+!SLIDE
+
+# Exceptions
+### When things go wrong
+
+!SLIDE
+
+# Exceptions
+
+	@@@ ruby
+	RuntimeError
+	SyntaxError
+	NameError
+	StandardError
+	NoMethodError
+
+!SLIDE
+
+# Exceptions
+
+	@@@ ruby
+	def post_to_twitter
+	  Twitter.update("Learning Ruby!")
+	rescue Twitter::ServiceUnavailable
+	  puts "Try again later"
+	rescue Twitter::EnhanceYourCalm
+	  puts "You post too often, chill out"
+	end
+
+!SLIDE
+
+# Exceptions
+
+	@@@ ruby
+	def initialize(pkey, options = {})
+	  begin
+	    @key_object = OpSSL::P::R.new(pkey)
+	    @type = "rsa"
+	  rescue
+	    @key_object = OpSSL::P::R.new(pkey)
+	    @type = "dsa"
+	  end
+
+	  @comment = options[:comment] || ""
+	end
+
+!SLIDE smbullets
+
+# Mix-ins
+
+* Composition vs. inheritance
+* Use include for instance methods
+* Use extend for class methods
+
+
+!SLIDE
+
+# Mix-ins
+	@@@ ruby
+	module CurrencyFormatter
+	  def format
+	    "$#{@value}"
+	  end
+	end
+
+	class Number
+	  include CurrencyFormatter
+	  def initialize(value)
+	    @value = value
+	  end
+	end
+
+	Number.new(5).format # => "$5"
