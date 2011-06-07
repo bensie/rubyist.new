@@ -16,11 +16,11 @@
 
 * Instance variable review
 * Accessor method review
+* Self
 * Inheritance
 * Method lookup
 * Class methods
 * Class variables and constants
-* Namespaces
 * Exceptions (begin, rescue, end)
 * Mix-ins
 
@@ -54,6 +54,26 @@
 	def comment=(comment)
 	  @comment = comment
 	end
+
+!SLIDE
+
+# Self
+
+!SLIDE smbullets
+
+# Self
+
+* All method calls in Ruby invoke with a receiver
+* If you don't explicitly say which object you want to send the message to, Ruby sends it to self
+* self = the current object / the default receiver
+
+!SLIDE smbullets incremental
+
+# Self
+### Only two things change self
+
+* Class/module definition
+* Method call with explicit receiver
 
 !SLIDE smbullets incremental
 
@@ -149,6 +169,10 @@
 
 # Class Variables
 
+!SLIDE
+
+# Class Variables
+
 	@@@ ruby
 	class Polygon
 	  @@sides = 10
@@ -194,7 +218,7 @@
 !SLIDE
 
 # Exceptions
-### When things go wrong
+### Halt execution when things go wrong
 
 !SLIDE
 
