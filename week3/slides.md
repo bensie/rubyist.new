@@ -70,7 +70,7 @@
 !SLIDE smbullets incremental
 
 # Self
-### Only two things change self
+### Only two things EVER change self
 
 * Class/module definition
 * Method call with explicit receiver
