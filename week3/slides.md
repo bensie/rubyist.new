@@ -288,3 +288,8 @@
 	end
 
 	Number.new(5).format # => "$5"
+
+!SLIDE
+
+# Exercise
+### https://gist.github.com/1013546
