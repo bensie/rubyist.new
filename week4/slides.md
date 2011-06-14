@@ -19,6 +19,7 @@
 * Using Gems
 * Require
 * Working With Files
+* Enumerable
 
 !SLIDE
 
@@ -102,6 +103,19 @@
 
 !SLIDE
 
+# Require #
+
+	@@@ ruby
+	# Ruby 1.9
+	require_relative "my_nearby_file"
+
+	# Ruby 1.8
+	require File.expand_path(
+		"../my_nearby_file", __FILE__
+	)
+
+!SLIDE
+
 # Using Gems #
 
 !SLIDE
@@ -171,3 +185,28 @@
 	chmod(mode, list, options)
 	chown(user, group, list, options)
 	touch(list, options)
+
+!SLIDE
+
+# Enumerable #
+
+### http://ruby-doc.org/core/classes/Enumerable.html ###
+
+!SLIDE
+
+# Enumerable#map (collect) #
+
+	@@@ ruby
+	people = [
+		{ name: "James", born: 1984 },
+		{ name: "Joe",   born: 1975 },
+		{ name: "Greg",  born: 1977 }
+	]
+
+	names = people.map do |p|
+	  p[:name]
+	end
+	# => ["James", "Joe", "Greg"]
+
+	names.join(", ")
+	# => "James, Joe, Greg"
