@@ -132,3 +132,42 @@
 
 	puts "Item count: #{i.count}"
 	puts "First item price: #{i.first[:price]}"
+
+!SLIDE
+
+# Working with Files #
+
+!SLIDE
+
+# Working with Files #
+### http://www.ruby-doc.org/core/classes/File.html ###
+### http://www.ruby-doc.org/core/classes/IO.html ###
+### http://www.ruby-doc.org/stdlib/libdoc/fileutils/rdoc/index.html ###
+
+	@@@ ruby
+	f = File.open("/path/to/file.txt")
+	f.each_line do |line|
+	  puts line
+	end
+
+!SLIDE
+
+# Working with Files #
+
+### http://www.ruby-doc.org/stdlib/libdoc/fileutils/rdoc/index.html ###
+
+	@@@ ruby
+	require 'fileutils'
+
+	cd(dir, options)
+	mkdir(dir, options)
+	rmdir(dir, options)
+	ln(old, new, options)
+	ln_s(old, new, options)
+	cp(src, dest, options)
+	mv(src, dest, options)
+	rm(list, options)
+	rm_rf(list, options)
+	chmod(mode, list, options)
+	chown(user, group, list, options)
+	touch(list, options)
