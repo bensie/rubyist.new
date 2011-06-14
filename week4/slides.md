@@ -198,9 +198,9 @@
 
 	@@@ ruby
 	people = [
-		{ name: "James", born: 1984 },
-		{ name: "Joe",   born: 1975 },
-		{ name: "Greg",  born: 1977 }
+	  { name: "James", born: 1984 },
+	  { name: "Joe",   born: 1975 },
+	  { name: "Greg",  born: 1977 }
 	]
 
 	names = people.map do |p|
@@ -210,3 +210,44 @@
 
 	names.join(", ")
 	# => "James, Joe, Greg"
+
+!SLIDE
+
+# Enumerable#any?
+
+	@@@ ruby
+	people = [
+	  { name: "James", born: 1984 },
+	  { name: "Joe",   born: 1975 },
+	  { name: "Greg",  born: 1977 }
+	]
+
+	people.any? do |p|
+	  p[:born] > 1975
+	end
+	# => true
+
+	people.any? do |p|
+	  p[:name] =~ /^J/
+	end
+	# => true
+
+!SLIDE
+
+# Enumerable#select
+
+	@@@ ruby
+	people = [
+	  { name: "James", born: 1984 },
+	  { name: "Joe",   born: 1975 },
+	  { name: "Greg",  born: 1977 }
+	]
+
+	j = people.select do |p|
+	  p[:name] =~ /^J/
+	end
+
+	j = people.select {|p| p[:name] =~ /^J/ }
+
+	j.map {|p| p[:name] }
+	# => ["James", "Joe"]
