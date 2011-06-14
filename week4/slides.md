@@ -251,3 +251,7 @@
 
 	j.map {|p| p[:name] }
 	# => ["James", "Joe"]
+
+!SLIDE
+
+# https://gist.github.com/1026177 #
