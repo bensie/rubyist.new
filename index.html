@@ -1190,6 +1190,63 @@ j.map {|p| p[:name] }
 <h1>Exercise</h1>
 
 <h3>https://gist.github.com/1026177</h3></div>
+</div><div class="slide" data-transition="none"><div class="content" ref="week5/slides/1">
+<h2>SDRuby</h2>
+
+<h1>Rubyist.new</h1>
+
+<h3>James Miller</h3></div>
+</div><div class="slide" data-transition="none"><div class="content" ref="week5/slides/2">
+<h1>Week 5</h1></div>
+</div><div class="slide" data-transition="none"><div class="content smbullets" ref="week5/slides/3">
+<h1>Today</h1>
+
+<ul>
+<li>Metaprogramming</li>
+<li>Mix-In Conventions</li>
+<li>Digging into Rails</li>
+</ul>
+</div>
+</div><div class="slide" data-transition="none"><div class="content" ref="week5/slides/4">
+<h1>Metaprogramming</h1>
+
+<h3>Code that writes code</h3></div>
+</div><div class="slide" data-transition="none"><div class="content" ref="week5/slides/5">
+<h1>Metaprogramming</h1>
+
+<pre class="sh_ruby"><code>%w(dev stage prod).each do |env|
+  define_method "test_#{env}" do |reset_db|
+    if reset_db &amp;&amp; env != "prod"
+      puts "Resetting db project_#{env}"
+    end
+  end
+end</code></pre></div>
+</div><div class="slide" data-transition="none"><div class="content" ref="week5/slides/6">
+<h1>Metaprogramming</h1>
+
+<pre class="sh_ruby"><code>def test_dev(reset_db)
+  if reset_db &amp;&amp; env != "prod"
+    puts "Resetting db project_dev"
+  end
+end
+
+def test_stage(reset_db)
+  # ...
+end
+
+def test_prod(reset_db)
+  # ...
+end</code></pre></div>
+</div><div class="slide" data-transition="none"><div class="content" ref="week5/slides/7">
+<h1>Metaprogramming</h1>
+
+<pre class="sh_ruby"><code>"James Miller".send(:length)
+# =&gt; 12
+
+"James-Miller".send(:split, "-")
+# =&gt; ["James", "Miller"]</code></pre></div>
+</div><div class="slide" data-transition="none"><div class="content" ref="week5/slides/8">
+<h1>Metaprogramming</h1></div>
 </div></div>
 
 </body>
