@@ -29,10 +29,12 @@
 # Metaprogramming #
 
 	@@@ ruby
-	%w(dev stage prod).each do |env|
-	  define_method "test_#{env}" do |reset_db|
-	    if reset_db && env != "prod"
-	      puts "Resetting db project_#{env}"
+	class Foo
+	  %w(dev stage prod).each do |env|
+	    define_method "test_#{env}" do |reset_db|
+	      if reset_db && env != "prod"
+	        puts "Resetting db project_#{env}"
+	      end
 	    end
 	  end
 	end
@@ -70,3 +72,63 @@
 !SLIDE
 
 # Metaprogramming #
+
+	@@@ ruby
+	%w(length split reverse).each do |meth|
+	  "James Miller".send(meth)
+	end
+
+	# 12
+	# ["James", "Miller"]
+	# "relliM semaJ"
+
+!SLIDE
+
+# Metaprogramming #
+
+!SLIDE
+
+# Mix-In Conventions #
+
+!SLIDE
+
+# Mix-In Conventions #
+
+	@@@ ruby
+	module M
+	  def self.included(base)
+	    base.extend ClassMethods
+	    base.send :include, InstanceMethods
+	    base.some_class_method
+	  end
+
+	  module ClassMethods
+	    # ...
+	  end
+
+	  module InstanceMethods
+	    # ...
+	  end
+	end
+
+!SLIDE
+
+# ActiveSupport::Concern #
+
+	@@@ ruby
+	module M
+	  extend ActiveSupport::Concern
+
+	  included do
+	    some_class_method
+	  end
+
+	  module ClassMethods
+	    # ...
+	  end
+
+	  module InstanceMethods
+	    # ...
+	  end
+	end
+
