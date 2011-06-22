@@ -1214,10 +1214,12 @@ j.map {|p| p[:name] }
 </div><div class="slide" data-transition="none"><div class="content" ref="week5/slides/5">
 <h1>Metaprogramming</h1>
 
-<pre class="sh_ruby"><code>%w(dev stage prod).each do |env|
-  define_method "test_#{env}" do |reset_db|
-    if reset_db &amp;&amp; env != "prod"
-      puts "Resetting db project_#{env}"
+<pre class="sh_ruby"><code>class Foo
+  %w(dev stage prod).each do |env|
+    define_method "test_#{env}" do |reset_db|
+      if reset_db &amp;&amp; env != "prod"
+        puts "Resetting db project_#{env}"
+      end
     end
   end
 end</code></pre></div>
@@ -1246,7 +1248,130 @@ end</code></pre></div>
 "James-Miller".send(:split, "-")
 # =&gt; ["James", "Miller"]</code></pre></div>
 </div><div class="slide" data-transition="none"><div class="content" ref="week5/slides/8">
+<h1>Metaprogramming</h1>
+
+<pre class="sh_ruby"><code>%w(length split reverse).each do |meth|
+  "James Miller".send(meth)
+end
+
+# 12
+# ["James", "Miller"]
+# "relliM semaJ"</code></pre></div>
+</div><div class="slide" data-transition="none"><div class="content" ref="week5/slides/9">
 <h1>Metaprogramming</h1></div>
+</div><div class="slide" data-transition="none"><div class="content" ref="week5/slides/10">
+<h1>Mix-In Conventions</h1></div>
+</div><div class="slide" data-transition="none"><div class="content" ref="week5/slides/11">
+<h1>Mix-In Conventions</h1>
+
+<pre class="sh_ruby"><code>module M
+  def self.included(base)
+    base.extend ClassMethods
+    base.send :include, InstanceMethods
+    base.some_class_method
+  end
+
+  module ClassMethods
+    # ...
+  end
+
+  module InstanceMethods
+    # ...
+  end
+end</code></pre></div>
+</div><div class="slide" data-transition="none"><div class="content" ref="week5/slides/12">
+<h1>ActiveSupport::Concern</h1>
+
+<pre class="sh_ruby"><code>module M
+  extend ActiveSupport::Concern
+
+  included do
+    some_class_method
+  end
+
+  module ClassMethods
+    # ...
+  end
+
+  module InstanceMethods
+    # ...
+  end
+end</code></pre></div>
+</div><div class="slide" data-transition="none"><div class="content" ref="week5/slides/13">
+<h1>Ruby on Rails</h1></div>
+</div><div class="slide" data-transition="none"><div class="content smbullets" ref="week5/slides/14">
+<h1>ActiveSupport</h1>
+
+<ul>
+<li>Useful utility classes and standard library extensions</li>
+<li>Designed for Rails, but moved out into separate lib to so it can be included in Ruby projects</li>
+</ul>
+</div>
+</div><div class="slide" data-transition="none"><div class="content" ref="week5/slides/15">
+<h1>ActiveSupport</h1>
+
+<pre class="sh_ruby"><code>class Object
+  def blank?
+    respond_to?(:empty?) ? empty? : !self
+  end
+
+  def present?
+    !blank?
+  end
+
+  def presence
+    self if present?
+  end
+end</code></pre></div>
+</div><div class="slide" data-transition="none"><div class="content smbullets" ref="week5/slides/16">
+<h1>ActiveModel</h1>
+
+<ul>
+<li>Allow for other Rails helpers to interact with non-ActiveRecord models</li>
+<li>Helps building custom ORMs</li>
+</ul>
+</div>
+</div><div class="slide" data-transition="none"><div class="content smbullets" ref="week5/slides/17">
+<h1>ActiveRecord</h1>
+
+<ul>
+<li>Connects classes to relational database tables  for a zero-configuration persistence layer</li>
+<li>Provides a base class that, when subclassed, sets up a mapping between the new class and an existing table in the database (models)</li>
+</ul>
+</div>
+</div><div class="slide" data-transition="none"><div class="content" ref="week5/slides/18">
+<h1>ActiveRecord</h1>
+
+<pre class="sh_ruby"><code>class Product &lt; ActiveRecord::Base
+end</code></pre></div>
+</div><div class="slide" data-transition="none"><div class="content smbullets" ref="week5/slides/19">
+<h1>ActionController</h1>
+
+<ul>
+<li>Provides a base controller class that can be subclassed to implement filters and actions to handle requests</li>
+<li>The result of an action is typically content generated from views</li>
+</ul>
+</div>
+</div><div class="slide" data-transition="none"><div class="content" ref="week5/slides/20">
+<h1>ActionController</h1>
+
+<pre class="sh_ruby"><code>class ProductsController &lt; ActionController::Base
+  before_filter :find_product
+
+  def index
+  end
+
+  def show
+  end
+
+  private
+
+  def find_product
+    @product = Product.find(params[:id])
+  end
+end</code></pre></div>
+</div><div class="slide" data-transition="none"><div class="content" ref="week5/slides/21">
+<h1>Questions?</h1></div>
 </div></div>
 
 </body>
