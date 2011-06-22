@@ -132,3 +132,86 @@
 	  end
 	end
 
+!SLIDE
+
+# Ruby on Rails #
+
+!SLIDE smbullets
+
+# ActiveSupport #
+
+* Useful utility classes and standard library extensions
+* Designed for Rails, but moved out into separate lib to so it can be included in Ruby projects
+
+!SLIDE
+
+# ActiveSupport #
+
+	@@@ ruby
+	class Object
+	  def blank?
+	    respond_to?(:empty?) ? empty? : !self
+	  end
+
+	  def present?
+	    !blank?
+	  end
+
+	  def presence
+	    self if present?
+	  end
+	end
+
+!SLIDE smbullets
+
+# ActiveModel #
+
+* Allow for other Rails helpers to interact with non-ActiveRecord models
+* Helps building custom ORMs
+
+!SLIDE smbullets
+
+# ActiveRecord #
+
+* Connects classes to relational database tables  for a zero-configuration persistence layer
+* Provides a base class that, when subclassed, sets up a mapping between the new class and an existing table in the database (models)
+
+!SLIDE
+
+# ActiveRecord #
+
+	@@@ ruby
+	class Product < ActiveRecord::Base
+	end
+
+!SLIDE smbullets
+
+# ActionController #
+
+* Provides a base controller class that can be subclassed to implement filters and actions to handle requests
+* The result of an action is typically content generated from views
+
+!SLIDE
+
+# ActionController #
+
+	@@@ ruby
+	class ProductsController < ActionController::Base
+	  before_filter :find_product
+
+	  def index
+	  end
+
+	  def show
+	  end
+
+	  private
+
+	  def find_product
+	    @product = Product.find(params[:id])
+	  end
+	end
+
+!SLIDE
+
+# Questions? #
